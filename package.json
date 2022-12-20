@@ -1,6 +1,6 @@
 {
   "name": "@databricks/sql",
-  "version": "1.0.0",
+  "version": "1.1.1-obs.0",
   "description": "Driver for connection to Databricks SQL via Thrift API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,11 +12,10 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "prepare": "npm run build",
     "e2e": "nyc --reporter=lcov --report-dir=coverage_e2e mocha --config tests/e2e/.mocharc.js",
     "test": "nyc --reporter=lcov --report-dir=coverage_unit mocha  --config tests/unit/.mocharc.js",
     "update-version": "node bin/update-version.js && prettier --write ./lib/version.ts",
-    "build": "npm run update-version && tsc",
+    "build": "yarn run update-version && tsc",
     "watch": "tsc -w",
     "type-check": "tsc --noEmit",
     "prettier": "prettier . --check",
@@ -45,7 +44,7 @@
     "hive",
     "hive js"
   ],
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@types/node-int64": "^0.4.29",
